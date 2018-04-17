@@ -1,0 +1,15 @@
+{%- comment -%}
+ @license
+ * Copyright 2018 Lucent Innovation. All Rights Reserved.
+ * you can use this code as required.
+ * Try to give credit to Lucent Innovation Team and Shopify who inspire us to write such code
+ * You can ask Lucent Innovation for any help on website lucentinnovation.com or email shopify@lucentinnovation.com
+{%- endcomment -%}
+
+{%- comment -%}
+Add three days from today
+{%- endcomment -%}
+{% assign day = 86400 %}
+{% assign days = 3 %}
+{% assign final_day = day | times:days %}
+{{'now' | date: "%s" | plus : final_day | date: "%b %d, %Y" | uri_encode | replace:"+","%20"}}
